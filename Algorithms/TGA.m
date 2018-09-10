@@ -1,0 +1,23 @@
+tic;
+not=200;
+trees=zeros(not,d+3);
+trees=initial(trees,range);
+trees=benefit(trees,objective_function);
+noi=100;
+teta=1.8;
+r=.408;
+N1=round(not/4);
+N2=round(not/4);
+N3=round(not/4);
+N4=round(not/4);
+lambda=.5;
+hamTGA=zeros(1,noi);
+for i=1:noi
+    besttree=selectbest(trees,1);
+    trees=compete_best(trees,teta,r,N1,range,objective_function);
+    trees=move_n2(trees,N1,N2,range,objective_function,lambda);
+    trees=trees_mask(trees,N3,objective_function,besttree);
+    trees=remove_worst(trees,N4,range,objective_function);
+    hamTGA(1,i)=min(trees(:,d+3));
+end
+toc
