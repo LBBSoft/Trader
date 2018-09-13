@@ -7,7 +7,7 @@ avialable in the folder named "Algorithms".
 Besides source codes, the created dataset is also available in the folder named
 "Dataset" which two txt files are available in it:
 
-1- dataset: this file contais known drug-target.
+1- dataset: this file contais known drug-target informations.
 
 2- potentials_drugs_and_targets: This file entails all potential drug-target
 interactions (unknown interactions) exclude known drug-target interactions.
